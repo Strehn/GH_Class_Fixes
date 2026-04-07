@@ -53,11 +53,11 @@ def add_collaborator(full_repo_name, username):
 
 def infer_student_username(repo_name, repo_prefix):
     """
-    Infer the student GitHub username from the repository name.
+    Infer the student GitHub username from the repository {username}.
     Example:
       repo_prefix = hw-1
-      repo_name = hw-1-frequency-based-entropy-estimator-swiftlydesigner-2
-      returns swiftlydesigner-2
+      repo_name = hw-1-frequency-based-entropy-estimator-{username}
+      returns name
     """
     prefix_marker = f"{repo_prefix}-frequency-based-entropy-estimator-"
     if repo_name.startswith(prefix_marker):
@@ -66,8 +66,8 @@ def infer_student_username(repo_name, repo_prefix):
 
 
 def main():
-    default_org = "COMP-3356-C-Programming"
-    default_prefix = "hw-1"
+    default_org = "Input Default Org Here"
+    default_prefix = "Input Default Assignment Prefix Here"
     repo_limit = "1000"
 
     org_input = input(f"Organization [{default_org}]: ").strip()
